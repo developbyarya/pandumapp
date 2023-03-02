@@ -1,5 +1,10 @@
-import "./globals.css";
+"use client";
+import "../globals.css";
 import { Nunito, Nunito_Sans } from "next/font/google";
+import { useState } from "react";
+import { AuthCredential } from "@/function/firebase/auth";
+import { AuthProvider } from "@/function/context/authContext";
+import AppNavbar from "@/layouts/navbar/appnavbar";
 
 const NUNITO_FONT = Nunito({
   weight: ["400", "500", "600", "700", "800"],
@@ -12,6 +17,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [user, setUser] = useState<AuthCredential | false>({});
   return (
     <html lang="en">
       {/*
@@ -20,7 +26,10 @@ export default function RootLayout({
       */}
       <head />
       <body className="bg-primary tracking-[8%] box-border font-nunito pt-10 px-5">
-        {children}
+        <AuthProvider value={{ setUser: setUser, user }}>
+          <AppNavbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
