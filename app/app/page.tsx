@@ -55,12 +55,12 @@ export default function MainApp() {
               <h6 className="text-sm">ꦔ꧀ꦊꦒꦼꦤ</h6>
             </div>
 
-            <button
-              type="button"
+            <Link
+              href={"/app/materi/aksara-dasar"}
               className="rounded-full text-white px-7 py-2 self-start bg-btnGradPrimary"
             >
               Mulai Belajar
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function MainApp() {
           Lihat Semua
         </Link>
       </div>
-      <div className=" whitespace-nowrap w-full overflow-x-scroll">
+      <div className=" whitespace-nowrap w-full overflow-x-scroll overflow-y-hidden">
         <div className="first:ml-auto overflow-x-scroll  mt-11 inline-flex gap-5 items-stretch shrink-0">
           <Link href={"/app/materi/pasangan"}>
             <div className="w-64 h-40 relative rounded-xl">
@@ -114,6 +114,26 @@ export default function MainApp() {
               <p className="text-xs">Coming Soon</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <div className="flex justify-between">
+          <h3 className="text-xl font-bold">Artikel</h3>
+          <div className="flex gap-2">
+            <button className="bg-blue-800 text-white rounded-full px-4 py-2">
+              Indonesia
+            </button>
+            <button className="border-2 border-blue-800 px-4 py-2 rounded-full">
+              Jawa
+            </button>
+          </div>
+        </div>
+        <div className="mt-5">
+          <h4 className="text-2xl text-center font-bold">Coming Soon</h4>
+          <p className="text-xl text-center font-medium">
+            Maaf, Fitur ini masih dalam pengembangan
+          </p>
         </div>
       </div>
     </div>

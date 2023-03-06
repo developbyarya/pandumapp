@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundColor: {
         primary: "#f2f8ff",
+        varians1: "#8EC2EC",
       },
       backgroundImage: {
         btnGradPrimary:
@@ -26,10 +27,12 @@ module.exports = {
       },
       textColor: {
         overlay: "#919599",
+        secondary: "#2C3642",
         info: "#13578D",
       },
       fontFamily: {
         nunito: ["var(--font-nunito)"],
+        aksara: ["var(--font-aksara)"],
       },
     },
   },
