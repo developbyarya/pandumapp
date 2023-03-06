@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        "fil-space": "calc(100vh - 36px - 2.5rem)",
+      },
       colors: {
         buttonPrimary: "#2974AF",
       },

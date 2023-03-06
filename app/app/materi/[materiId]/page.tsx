@@ -1,6 +1,6 @@
 import {
   getSubMateri,
-  getMateri,
+  getMateris,
 } from "@/function/firebase/firestore/materi/getMateri";
 import { MdBook } from "react-icons/md";
 import { Font } from "@/assets/font/font";
@@ -8,6 +8,8 @@ import { Font } from "@/assets/font/font";
 import { Circular } from "@/components/progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import SubMateri from "./submateri";
+import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 
 export default async function Page({
   params,
@@ -17,7 +19,8 @@ export default async function Page({
   if (!params?.materiId) return <>Error</>;
 
   const subMateri = await getSubMateri(params?.materiId as string);
-  const materis = await getMateri(subMateri.id as string[]);
+  const materis = await getMateris(subMateri.id as string[]);
+  console.log(materis);
 
   return (
     <div className="mt-14">
@@ -35,11 +38,16 @@ export default async function Page({
       </div>
       <div className="mt-8 flex flex-col gap-5">
         {materis.map((materi, index) => (
-          <SubMateri
-            order={index + 1}
-            title={"Aksara Dasar " + index.toString()}
-            value={0}
-          />
+          <Link
+            href={`/app/materi/${params.materiId}/${materi.id}--${materi.b}`}
+          >
+            <SubMateri
+              order={index + 1}
+              title={"Aksara Dasar " + (index + 1).toString()}
+              value={0}
+              key={uuidv4()}
+            />
+          </Link>
         ))}
       </div>
     </div>

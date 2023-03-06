@@ -9,7 +9,7 @@ interface Props {
 }
 export default function SubMateri({ order, title, value }: Props) {
   return (
-    <div className="flex flex-row w-full justify-between gap-6 ">
+    <div className="flex flex-row w-full justify-between gap-6 hover:bg-slate-200 cursor-pointer">
       <div className="w-16 h-16 bg-varians1 text-3xl text-[#2E3F4D] rounded-xl flex justify-center items-center font-extrabold">
         {order.toString()}
       </div>

@@ -27,9 +27,9 @@ export async function getSubMateri(materiId: string): Promise<SubMateri> {
   }
 }
 
-interface Materi {}
+interface Materis {}
 
-export async function getMateri(ids: string[]) {
+export async function getMateris(ids: string[]) {
   // refactor id into doc ref
   const refs = ids.map((id) => doc(db, "soal", id));
 
@@ -43,7 +43,7 @@ export async function getMateri(ids: string[]) {
 
   const subcollectionrefs = refs.map((ref, index) => {
     // convert chapter
-    const bagains = Array.from(
+    const bagains: string[] = Array.from(
       { length: chapters[index] },
       (_, i) => i + 1
     ).map((bagian) => "bagian" + bagian);
@@ -65,6 +65,23 @@ export async function getMateri(ids: string[]) {
 
   return subcollectionrefs
     .flat()
-    .map((i, index) => ({ ...i, total: totalDocs.flat()[index] }))
+    .map((i, index) => ({
+      ...i,
+      total: totalDocs.flat()[index],
+      collection: i.collection.path,
+    }))
     .flat();
+}
+
+export interface Materi {
+  tipe: "materi" | "pilihan" | "pilihan_kartu";
+  data: any;
+}
+
+export async function getMateri(path: string): Promise<Materi[]> {
+  const [a, b] = path.split("/");
+  const collect = collection(db, "soal", a, b);
+  const snapshot = await getDocs(collect);
+
+  return snapshot.docs.map((doc) => doc.data()) as Materi[];
 }
