@@ -38,9 +38,9 @@ export default function Ketik({ pertanyaan, kunci }: Props) {
         className="border-2 border-secondary rounded-xl px-2 py-4 text-xl w-4/5"
       />
       <div
-        className={`absolute p-4 bottom-0 h-40 -ml-5 self-start ${
+        className={`fixed pb-4 px-5 bottom-0 h-40 -ml-10 self-start ${
           completed && "bg-blue-200"
-        } flex flex-col justify-between`}
+        } ${answer.length > 0 ? "flex" : "hidden"} flex-col justify-between`}
         style={{ width: "calc(100% + 40px)" }}
       >
         <p className="font-medium text-lg!">

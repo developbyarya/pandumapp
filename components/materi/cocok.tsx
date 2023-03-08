@@ -103,12 +103,14 @@ export default function Cocok({ kunci, left, right }: Props) {
       </div>
 
       <div
-        className={`absolute p-4 bottom-0 h-40 -ml-5 self-start ${
+        className={`fixed pb-4 px-5 bottom-0 h-40 -ml-10 self-start ${
           all(completed) && "bg-blue-200"
-        } flex flex-col justify-between`}
+        } ${all(completed) ? "flex" : "hidden"} flex-col justify-between`}
         style={{ width: "calc(100% + 40px)" }}
       >
-        <p className="font-medium text-lg!">{all(completed) && "Anda Benar"}</p>
+        <p className="font-medium text-lg p-4">
+          {all(completed) && "Anda Benar"}
+        </p>
         <button
           type="button"
           className={` ${

@@ -76,7 +76,7 @@ export default function Pilihan({
         } ${target !== false ? "flex" : "hidden"} flex-col justify-between`}
         style={{ width: "calc(100% + 40px)" }}
       >
-        <p className="text-xl font-bold text-lg! p-4">
+        <p className="text-xl font-bold p-4">
           {completed && (correct ? "Anda Benar" : "Anda Salah")}
         </p>
         <button
