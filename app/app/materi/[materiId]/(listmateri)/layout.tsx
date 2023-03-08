@@ -5,8 +5,7 @@ import localFont from "next/font/local";
 import { useState } from "react";
 import { AuthCredential } from "@/function/firebase/auth";
 import { AuthProvider } from "@/function/context/authContext";
-import MateriNavbar from "@/layouts/navbar/materinavbar";
-import { MateriProvider } from "@/function/context/materiContext";
+import AppNavbar from "@/layouts/navbar/appnavbar";
 
 const NUNITO_FONT = Nunito({
   weight: ["400", "500", "600", "700", "800", "900", "1000"],
@@ -19,16 +18,18 @@ const Font = localFont({
   variable: "--font-aksara",
 });
 
-export default function PathLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const [user, setUser] = useState<AuthCredential | false>({});
-  const [value, setValue] = useState<number>(0);
-  const [total, setTotal] = useState<number>(0);
   return (
     <html lang="en">
+      {/*
+        <head /> will contain the components returned by the nearest parent
+        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
+      */}
       <head />
       <body
         className={
@@ -37,10 +38,8 @@ export default function PathLayout({
         }
       >
         <AuthProvider value={{ setUser: setUser, user }}>
-          <MateriProvider value={{ total, value, setValue, setTotal }}>
-            <MateriNavbar value={value + 1} total={total} />
-            {children}
-          </MateriProvider>
+          <AppNavbar />
+          {children}
         </AuthProvider>
       </body>
     </html>

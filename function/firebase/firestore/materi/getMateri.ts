@@ -74,7 +74,15 @@ export async function getMateris(ids: string[]) {
 }
 
 export interface Materi {
-  tipe: "materi" | "pilihan" | "pilihan_kartu";
+  tipe:
+    | "materi"
+    | "pilihan"
+    | "pilihan_kartu"
+    | "pertanyaan-latin"
+    | "ketik"
+    | "multiaksara"
+    | "cocok";
+
   data: any;
 }
 

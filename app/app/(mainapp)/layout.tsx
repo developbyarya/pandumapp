@@ -1,5 +1,5 @@
 "use client";
-import "../globals.css";
+import "../../globals.css";
 import { Nunito, Nunito_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { useState } from "react";
@@ -14,7 +14,7 @@ const NUNITO_FONT = Nunito({
 });
 
 const Font = localFont({
-  src: "../../assets/font/nyk.ttf",
+  src: "../../../assets/font/nyk.ttf",
   variable: "--font-aksara",
 });
 

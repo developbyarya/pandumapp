@@ -7,7 +7,7 @@ import { Font } from "@/assets/font/font";
 
 import { Circular } from "@/components/progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import SubMateri from "./submateri";
+import SubMateri from "../submateri";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
@@ -20,7 +20,6 @@ export default async function Page({
 
   const subMateri = await getSubMateri(params?.materiId as string);
   const materis = await getMateris(subMateri.id as string[]);
-  console.log(materis);
 
   return (
     <div className="mt-14">

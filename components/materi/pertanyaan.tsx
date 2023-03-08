@@ -1,4 +1,5 @@
 import { Font } from "@/assets/font/font";
+import { useMateri } from "@/function/context/materiContext";
 
 export default function Pertanyaan({
   aksara,
@@ -7,6 +8,7 @@ export default function Pertanyaan({
   aksara: string;
   latin: string;
 }) {
+  const materiController = useMateri();
   return (
     <div className="mb-1 h-[80vh] relative flex flex-col  items-center">
       <div className="rounded-xl bg-blue-800 justify-center  relative w-64 h-64 m-16 flex flex-col ">
@@ -19,6 +21,10 @@ export default function Pertanyaan({
       </div>
       <button
         type="button"
+        onClick={() => {
+          if (materiController.value >= materiController.total) return;
+          materiController.setValue((prev) => prev + 1);
+        }}
         className="absolute bottom-5 bg-blue-800 w-full text-center text-white rounded-full py-3 text-lg hover:to-blue-900"
       >
         Lanjut
