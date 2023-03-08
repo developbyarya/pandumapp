@@ -13,6 +13,9 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
+export async function generateStaticParams() {
+  return [{ materiId: "aksara-dasar" }];
+}
 
 export default async function Page({
   params,
