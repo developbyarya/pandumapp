@@ -39,6 +39,7 @@ export default async function Page({
         {materis.map((materi, index) => (
           <Link
             href={`/app/materi/${params.materiId}/${materi.id}--${materi.b}`}
+            key={uuidv4()}
           >
             <SubMateri
               order={index + 1}

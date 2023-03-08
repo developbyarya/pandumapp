@@ -1,4 +1,5 @@
 import { Font } from "@/assets/font/font";
+import { v4 as uuidv4 } from "uuid";
 import { useMateri } from "@/function/context/materiContext";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -36,6 +37,7 @@ export default function Cocok({ kunci, left, right }: Props) {
         <div className="flex flex-col gap-5">
           {left.map((l, index) => (
             <button
+              key={uuidv4()}
               type="button"
               className={`border-2 ${
                 leftTarget == index
@@ -69,6 +71,7 @@ export default function Cocok({ kunci, left, right }: Props) {
           {right.map((r, index) => (
             <button
               type="button"
+              key={uuidv4()}
               className={`border-2 ${
                 rightTarget == index
                   ? "border-blue-600"

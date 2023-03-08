@@ -3,6 +3,7 @@ import { Font } from "@/assets/font/font";
 import { useMateri } from "@/function/context/materiContext";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   pertanyaan: string;
@@ -43,6 +44,7 @@ export default function Pilihan({
       <div className="w-full grid grid-cols-2 justify-between justify-items-center mb-10 mt-10">
         {option.map((opsi, index) => (
           <button
+            key={uuidv4()}
             onClick={() => {
               if (completed) return;
               setTarget(index);
