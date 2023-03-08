@@ -29,7 +29,7 @@ export default async function Page({
   const materis = await getMateris(subMateri.id as string[]);
 
   return (
-    <div className="mt-14">
+    <div className="mt-14 lg:px-64">
       <Backbutton to="/app" />
       <div className="flex flex-row mt-4 justify-between items-center">
         <div className="flex flex-col gap-1">
