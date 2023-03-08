@@ -11,6 +11,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/navigation";
 import Ketik from "@/components/materi/ketik";
 import Cocok from "@/components/materi/cocok";
+import { ThreeCircles } from "react-loader-spinner";
 
 function getMateriComponent(m: Materi) {
   switch (m.tipe) {
@@ -95,9 +96,13 @@ export default function Page({
   }, []);
   return (
     <>
-      {materis &&
-        materiController.value + 1 <= materiController.total &&
-        getMateriComponent(materis[materiController.value])}
+      {materis && materiController.value + 1 <= materiController.total ? (
+        getMateriComponent(materis[materiController.value])
+      ) : (
+        <div className="w-full h-screen items-center justify-center">
+          <ThreeCircles color="#2974AF" />
+        </div>
+      )}
     </>
   );
 }

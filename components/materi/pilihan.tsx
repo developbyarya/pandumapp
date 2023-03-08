@@ -29,7 +29,7 @@ export default function Pilihan({
       style={{ height: "100vh" }}
     >
       {isAksara ? (
-        <div className="rounded-xl bg-blue-800 justify-center  relative px-8 py-10 mt-10 flex flex-col overflow-x-hidden">
+        <div className="rounded-xl bg-blue-800 justify-center  relative px-8 py-5 mt-10 flex flex-col overflow-x-hidden">
           <h6
             className={`${Font.className} text-white ${
               pertanyaan.length == 1 ? "text-[98px]" : "text-[64px]"
@@ -71,12 +71,12 @@ export default function Pilihan({
         ))}
       </div>
       <div
-        className={`absolute p-4 bottom-0 h-40 -ml-5 self-start ${
+        className={`fixed pb-4 px-5 bottom-0 h-40 -ml-10 self-start ${
           completed && "bg-blue-200"
-        } flex flex-col justify-between`}
+        } ${target !== false ? "flex" : "hidden"} flex-col justify-between`}
         style={{ width: "calc(100% + 40px)" }}
       >
-        <p className="font-medium text-lg!">
+        <p className="text-xl font-bold text-lg! p-4">
           {completed && (correct ? "Anda Benar" : "Anda Salah")}
         </p>
         <button

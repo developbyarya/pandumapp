@@ -18,7 +18,7 @@ export default function MateriNavbar({
         ></div>
       </div>
       <p>
-        {value}/{total}
+        {value <= total ? value : total}/{total}
       </p>
     </nav>
   );

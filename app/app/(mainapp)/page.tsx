@@ -10,6 +10,8 @@ import { auth } from "@/function/firebase/auth";
 import { getUserProgress } from "@/function/firebase/firestore/useraction";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function MainApp() {
   const authCred = useAuth();
   const [nextProgress, setNextProgress] = React.useState<{
@@ -73,7 +75,7 @@ export default function MainApp() {
       </div>
       <div className=" whitespace-nowrap w-full overflow-x-scroll overflow-y-hidden">
         <div className="first:ml-auto overflow-x-scroll  mt-11 inline-flex gap-5 items-stretch shrink-0">
-          <Link href={"/app/materi/pasangan"}>
+          <Link href={"/app/materi/aksara-dasar"}>
             <div className="w-64 h-40 relative rounded-xl">
               <div className="learning-card2 h-full w-full absolute rounded-xl -z-10"></div>
               <Image
@@ -88,9 +90,9 @@ export default function MainApp() {
                   <p className="text-secondary text-sm font-medium">
                     Aksara Jawa
                   </p>
-                  <h5 className="text-xl font-bold">Pasangan</h5>
+                  <h5 className="text-xl font-bold">Aksar dasar</h5>
                 </div>
-                <p className="text-xs">7 Materi</p>
+                <p className="text-xs">10 Materi</p>
               </div>
             </div>
           </Link>

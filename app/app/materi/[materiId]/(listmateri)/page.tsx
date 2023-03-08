@@ -11,8 +11,8 @@ import SubMateri from "../submateri";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
+export const dynamic = "force-static";
+export const dynamicParams = false;
 export async function generateStaticParams() {
   return [{ materiId: "aksara-dasar" }];
 }
