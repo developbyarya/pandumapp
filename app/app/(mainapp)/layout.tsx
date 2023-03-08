@@ -26,7 +26,7 @@ export default function RootLayout({
       <head />
       <body
         className={
-          "bg-primary tracking-[8%] box-border font-nunito  pt-10 px-5 "
+          "bg-primary tracking-%] box-border font-nunito  pt-10 px-5 "
         }
       >
         <AuthProvider value={{ setUser: setUser, user }}>
