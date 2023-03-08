@@ -1,6 +1,6 @@
 "use client";
 import "../globals.css";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import { Nunito, Nunito_Sans } from "@next/font/google";
 import localFont from "next/font/local";
 import { useState } from "react";
 import { AuthCredential } from "@/function/firebase/auth";

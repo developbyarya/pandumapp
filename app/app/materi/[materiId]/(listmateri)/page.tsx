@@ -11,6 +11,9 @@ import SubMateri from "../submateri";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
 export default async function Page({
   params,
 }: {
