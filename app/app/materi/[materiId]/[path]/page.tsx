@@ -77,6 +77,8 @@ function getMateriComponent(m: Materi) {
   }
 }
 
+export const dynamicParams = true;
+
 export default function Page({
   params: { path },
 }: {
