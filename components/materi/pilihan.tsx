@@ -63,7 +63,7 @@ export default function Pilihan({
             <h6
               className={`${
                 !isAksara ? "text-[72px]" : "text-[32px]"
-              } self-center ${isAksara && Font.className}`}
+              } self-center ${Font.className}`}
             >
               {opsi}
             </h6>
