@@ -10,6 +10,7 @@ import "react-circular-progressbar/dist/styles.css";
 import SubMateri from "../submateri";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
+import Backbutton from "@/components/button/backbutton";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -29,7 +30,8 @@ export default async function Page({
 
   return (
     <div className="mt-14">
-      <div className="flex flex-row justify-between items-center">
+      <Backbutton to="/app" />
+      <div className="flex flex-row mt-4 justify-between items-center">
         <div className="flex flex-col gap-1">
           <p className="text-secondary">Aksara Jawa</p>
           <p className="font-bold text-2xl">{subMateri.nama}</p>
