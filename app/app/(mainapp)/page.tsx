@@ -66,7 +66,7 @@ export default function MainApp() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <div className="mt-16 lg:mt-0 flex w-full justify-between items-center">
             <h6 className="font-bold text-2xl ">Pelajari Materi</h6>
             <Link className="text-base hidden text-info" href={"/app/materi/"}>
