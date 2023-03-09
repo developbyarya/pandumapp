@@ -32,7 +32,7 @@ export default function Cocok({ kunci, left, right }: Props) {
     >
       <h5 className="text-2xl font-bold text-center">Cocokan</h5>
       <div
-        className={`w-full ${Font.className} flex justify-between px-10 mt-5`}
+        className={`w-full  ${Font.className} flex justify-between px-10 mt-5`}
       >
         <div className="flex flex-col gap-5">
           {left.map((l, index) => (
