@@ -25,13 +25,13 @@ export default function RootLayout({
       */}
       <head />
       <body
-        className={
-          "bg-primary tracking-[8%] box-border font-nunito  pt-10 px-5"
-        }
+        style={{ minHeight: "100vh" }}
+        className={"bg-white tracking-[8%] box-border font-nunito  pt-10 px-5"}
       >
         <AuthProvider value={{ setUser: setUser, user }}>
           <AppNavbar />
-          {children}
+
+          <div className="px-5 lg:px-36">{children}</div>
         </AuthProvider>
       </body>
     </html>

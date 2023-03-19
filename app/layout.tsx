@@ -19,7 +19,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="bg-primary tracking-[8%] box-border font-nunito pt-10 px-5">
+      <body className="bg-white tracking-[8%] box-border font-nunito pt-10 ">
         {children}
       </body>
     </html>
