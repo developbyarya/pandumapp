@@ -4,6 +4,7 @@ import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 
 interface SubMateri {
   collection?: string;
+  cover_filename?: string;
   aksara?: string;
   nama?: string;
   totalChapter?: number;
