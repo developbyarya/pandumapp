@@ -16,10 +16,8 @@ module.exports = {
       },
       colors: {
         buttonPrimary: "#2974AF",
-      },
-      backgroundColor: {
-        primary: "#f2f8ff",
-        varians1: "#8EC2EC",
+        primary: "#2B5FE4",
+        secondary: "#C8A52A",
       },
       backgroundImage: {
         btnGradPrimary:
@@ -34,8 +32,8 @@ module.exports = {
         info: "#13578D",
       },
       fontFamily: {
+        jawa: ["var(--font-jawa)"],
         nunito: ["var(--font-nunito)"],
-        aksara: ["var(--font-aksara)"],
       },
     },
   },
