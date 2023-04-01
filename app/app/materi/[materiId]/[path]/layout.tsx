@@ -7,11 +7,6 @@ import { AuthProvider } from "@/function/context/authContext";
 import MateriNavbar from "@/layouts/navbar/materinavbar";
 import { MateriProvider } from "@/function/context/materiContext";
 
-const Font = localFont({
-  src: "../../../../../assets/font/nyk.ttf",
-  variable: "--font-aksara",
-});
-
 export default function PathLayout({
   children,
 }: {

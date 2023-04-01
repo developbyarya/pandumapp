@@ -21,7 +21,9 @@ export default function StartLearningCard({
           {aksara}
         </Aksara>
         <h3 className="font-bold text-lg">{title} </h3>
-        <IconTextButton url={url} />
+        <IconTextButton url={"/app/materi/" + url}>
+          Mulai Sekarang
+        </IconTextButton>
       </div>
     </div>
   );

@@ -1,15 +1,9 @@
 "use client";
 import "../../../../globals.css";
-import localFont from "next/font/local";
 import { useState } from "react";
 import { AuthCredential } from "@/function/firebase/auth";
 import { AuthProvider } from "@/function/context/authContext";
 import AppNavbar from "@/layouts/navbar/appnavbar";
-
-const Font = localFont({
-  src: "../../../../../assets/font/nyk.ttf",
-  variable: "--font-aksara",
-});
 
 export default function RootLayout({
   children,
